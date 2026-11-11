@@ -60,3 +60,9 @@ h1 { margin: 0; font-size: 4vmin; flex: 1; }
 }
 .carta.errada img { mix-blend-mode: multiply; }
 #tela-cheia { font-size: 2.5vmin; padding: 1vmin 2vmin; }
+
+#escolha label { font-size: 2.6vmin; }
+#jogador { font-size: 4vmin; padding: 1.5vmin 2vmin; width: min(60vmin, 90vw); text-align: center; }
+#erro-numero { margin: 0; min-height: 3.2vmin; font-size: 2.6vmin; color: #ff8a80; max-width: 80vmin; text-align: center; }
+#identificacao { font-size: 3vmin; font-weight: 700; color: #ffd54f; white-space: nowrap; }
+.nivel:disabled { opacity: 0.6; cursor: wait; }

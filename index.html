@@ -11,6 +11,7 @@
 <body>
   <header>
     <h1>Memória Geométrica</h1>
+    <span id="identificacao" hidden></span>
     <div id="relogio"></div>
     <button id="novo">Novo jogo</button>
     <button id="camera">Ativar câmera</button>
@@ -19,6 +20,9 @@
   <p id="mensagem"></p>
   <section id="escolha">
     <h2>Escolha o tema</h2>
+    <label for="jogador">Número de identificação</label>
+    <input id="jogador" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off" maxlength="8" required>
+    <p id="erro-numero" role="alert"></p>
     <div id="niveis"></div>
   </section>
   <main id="tabuleiro"></main>

@@ -25,8 +25,8 @@ export function sortearPares(banco, quantidade) {
 
 function criarCartas(pares) {
   const cartas = pares.flatMap((par, idPar) => [
-    { idPar, conteudo: par.a, virada: false, combinada: false },
-    { idPar, conteudo: par.b, virada: false, combinada: false },
+    { idPar, chave: par.chave, conteudo: par.a, virada: false, combinada: false },
+    { idPar, chave: par.chave, conteudo: par.b, virada: false, combinada: false },
   ]);
   return embaralhar(cartas);
 }
