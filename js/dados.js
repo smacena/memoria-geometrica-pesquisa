@@ -117,3 +117,5 @@ export const objetosPlanos = [
   objetoPlano('pipa', 'losango', 'Losango'),
   objetoPlano('favo', 'hexagono', 'Hexágono'),
 ];
+
+export { figuraCaracteristica } from './caracteristicas.js';

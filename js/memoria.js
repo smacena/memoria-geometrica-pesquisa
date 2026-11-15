@@ -7,19 +7,38 @@ export function embaralhar(lista) {
   return copia;
 }
 
-export function sortearPares(banco, quantidade) {
-  const escolhidos = [];
-  const chavesUsadas = new Set();
+// Um par só pode entrar na rodada se não se confundir com os já escolhidos.
+// Pares sem "figura" (os temas antigos) são sempre compatíveis entre si.
+function compativel(par, escolhidos) {
+  if (par.figura === undefined) return true;
+  return escolhidos.every((outro) =>
+    outro.figura === undefined ||
+    (outro.figura !== par.figura &&
+      !par.conflita?.includes(outro.figura) &&
+      !outro.conflita?.includes(par.figura))
+  );
+}
 
-  for (const par of embaralhar(banco)) {
-    if (chavesUsadas.has(par.chave)) continue; // mesma figura: pula
-    chavesUsadas.add(par.chave);
-    escolhidos.push(par);
-    if (escolhidos.length === quantidade) return escolhidos;
+export function sortearPares(banco, quantidade) {
+  let maisLonga = 0;
+
+  // Sorteio guloso; se a rodada não fechar, recomeça (algumas combinações travam).
+  for (let tentativa = 0; tentativa < 50; tentativa++) {
+    const escolhidos = [];
+    const chavesUsadas = new Set();
+
+    for (const par of embaralhar(banco)) {
+      if (chavesUsadas.has(par.chave)) continue; // mesma chave: pula
+      if (!compativel(par, escolhidos)) continue; // confunde com algum já escolhido: pula
+      chavesUsadas.add(par.chave);
+      escolhidos.push(par);
+      if (escolhidos.length === quantidade) return escolhidos;
+    }
+    maisLonga = Math.max(maisLonga, escolhidos.length);
   }
 
   throw new Error(
-    `O banco só tem ${escolhidos.length} pares diferentes, mas pediu ${quantidade}.`
+    `O banco só consegue montar ${maisLonga} pares compatíveis, mas pediu ${quantidade}.`
   );
 }
 
