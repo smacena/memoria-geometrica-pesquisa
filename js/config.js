@@ -10,11 +10,11 @@ enderecoRegistro: 'https://script.google.com/macros/s/AKfycbzhsuRQrBnRhDzYrp33uC
   // segundos em que todas as cartas ficam à mostra no início (0 desliga)
   tempoPreviaSegundos: 5,
   temas: {
-    planas:      { nome: 'Figuras planas',      pares: 6, tempoSegundos: 90 },
+    // planas:      { nome: 'Figuras planas',      pares: 6, tempoSegundos: 90 },
     solidos:     { nome: 'Sólidos geométricos', pares: 5, tempoSegundos: 90 },
-    objetos:     { nome: 'Objetos e figuras',   pares: 5, tempoSegundos: 90 },
+    // objetos:     { nome: 'Objetos e figuras',   pares: 5, tempoSegundos: 90 },
     objetosNome: { nome: 'Qual é a figura?',    pares: 5, tempoSegundos: 90 },
-    objetosPlanos: { nome: 'Objetos planos', pares: 5, tempoSegundos: 90 },
+    // objetosPlanos: { nome: 'Objetos planos', pares: 5, tempoSegundos: 90 },
     figuraCaracteristica: { nome: 'Figuras e características', pares: 6, tempoSegundos: 90 },
   },
 };
