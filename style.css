@@ -66,3 +66,13 @@ h1 { margin: 0; font-size: 4vmin; flex: 1; }
 #erro-numero { margin: 0; min-height: 3.2vmin; font-size: 2.6vmin; color: #ff8a80; max-width: 80vmin; text-align: center; }
 #identificacao { font-size: 3vmin; font-weight: 700; color: #ffd54f; white-space: nowrap; }
 .nivel:disabled { opacity: 0.6; cursor: wait; }
+
+/* QR code para os alunos abrirem o jogo no próprio celular (some em telas pequenas) */
+#qr {
+  position: fixed; left: 3vmin; top: 14vmin; margin: 0;
+  display: flex; flex-direction: column; align-items: center; gap: 0.8vmin;
+  background: #fff; color: #101820; padding: 1vmin; border-radius: 1.5vmin;
+  font-size: 2vmin; font-weight: 600;
+}
+#qr img { width: 20vmin; height: 20vmin; display: block; pointer-events: none; }
+@media (max-width: 700px) { #qr { display: none; } }
