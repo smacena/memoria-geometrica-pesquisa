@@ -72,7 +72,7 @@ h1 { margin: 0; font-size: 4vmin; flex: 1; }
   position: fixed; left: 3vmin; top: 14vmin; margin: 0;
   display: flex; flex-direction: column; align-items: center; gap: 0.8vmin;
   background: #fff; color: #101820; padding: 1vmin; border-radius: 1.5vmin;
-  font-size: 2vmin; font-weight: 600;
+  font-size: 2.6vmin; font-weight: 600;
 }
-#qr img { width: 20vmin; height: 20vmin; display: block; pointer-events: none; }
+#qr img { width: 28vmin; height: 28vmin; display: block; pointer-events: none; }
 @media (max-width: 700px) { #qr { display: none; } }
